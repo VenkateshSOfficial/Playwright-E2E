@@ -110,4 +110,45 @@ console.log(checking(1, 2, 3, 4, 5));
 let opt = function (names: string, age: number, emails?: string) {
     return emails ? `name : ${names}, age : ${age}, email : ${emails}` : `name : ${names}, age : ${age}`
 }
-console.log(opt("Babbi",35,"abc@mail.com"));
+console.log(opt("Babbi", 35, "abc@mail.com"));
+
+let helloArrow = (): void => {
+    console.log("This is hello arrow function");
+}
+helloArrow();
+
+let funcArrow = (a: number, b: number): number => {
+    return a * b;
+}
+let functAnswer = funcArrow(2, 3);
+console.log(`Ans : ${functAnswer}`);
+
+let optArrow = (name: string, age?: number): number | string => {
+    return age ? (`name : ${name} , age : ${age}`) : (`name : ${name}`)
+}
+let ans = optArrow("Karuppan");
+console.log(`The arrow ans : ${ans}`)
+
+let defaultArrowVal = (x: number, y: number = 2): number => x / y;
+console.log(`The default : ${defaultArrowVal(1)}`)
+
+let multiplyArray = (...value: number[]): number => {
+    let mul: number = 1;
+    for (let val of value) {
+        mul *= val;
+    }
+    return mul;
+}
+console.log(`The multiply : ${multiplyArray(1, 2, 3)}`);
+
+let arraysArrow = (...v: number[] | string[]): number | string => {
+    let sums: number = 0;
+    let naam: string = '';
+    for (let vv of v) {
+        (typeof vv === 'number') ? (sums += vv) : (naam = vv.toUpperCase());
+    }
+    return sums || naam;
+}
+
+console.log(arraysArrow("I am Venkatesh"));
+console.log(arraysArrow(2,3,4,5));
