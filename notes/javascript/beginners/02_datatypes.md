@@ -13,12 +13,41 @@ JavaScript has **8 data types** split into two categories:
 | `bigint` | `9007199254740991n` |
 | `symbol` | `Symbol("id")` |
 
+> **`null` vs `undefined`:**
+> - `null` — explicitly set to "no value" by the developer
+> - `undefined` — JS assigned it because no value was provided
+
 ### Non-Primitive (stored by reference)
 | Type | Example |
 |------|---------|
 | `object` | `{}`, `[]`, `null` |
 
 > Use `typeof` to check the type of a value.
+
+---
+
+## Primitive vs Non-Primitive
+
+| Feature             | Primitive                     | Non-Primitive                         |
+|---------------------|-------------------------------|---------------------------------------|
+| **Storage**         | Stack (by value)              | Heap (by reference, pointer on stack) |
+| **Mutability**      | Immutable                     | Mutable                               |
+| **Equality check**  | Compares value                | Compares reference                    |
+| **Examples**        | `number`, `string`, `boolean` | `Array`, `Object`, `Function`         |
+
+```js
+// Primitive — copied by value
+let a = 10;
+let b = a;
+b = 20;
+console.log(a); // 10 — unchanged
+
+// Non-primitive — copied by reference
+let arr1 = [1, 2, 3];
+let arr2 = arr1;
+arr2.push(4);
+console.log(arr1); // [1, 2, 3, 4] — affected!
+```
 
 ---
 
