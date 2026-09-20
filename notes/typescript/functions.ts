@@ -156,3 +156,6 @@ let answer = (...val: number[]): number => {
     return sum;
 }
 console.log(`Answer : ${answer(1, 2, 3)}`);
+
+
+export { };
