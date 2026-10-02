@@ -57,3 +57,23 @@ let ans = searchValue(10, [2, 3, 5, 10, 12]);
 let ans1=searchValue(455, [2, 3, 5, 10, 12,13,41,456,342,123]);
 console.log(`Value exists : ${ans}`);
 console.log(`Value exists : ${ans1}`);
+
+/* example 5 : function returning an array */
+
+function convertToUpperCase(val:string[]):string[]{
+    let upperCaseData:string[]=[];
+    for(let i=0;i<val.length;i++){
+        upperCaseData[i]=val[i].toUpperCase();
+    }
+    return upperCaseData;
+}
+
+function toUpperCase(val:string[]):string[]{
+    return val.map((name)=>name.toUpperCase());
+}
+let upperCase=toUpperCase(["Ravi","ram","VInOd","GauTHAm"])
+console.log(`Upper Case : ${upperCase}`);
+
+let convertUpper=convertToUpperCase(["SamSUm","oniDA","vuE","sony","lG"]);
+console.log(`convert ans : ${convertUpper}`);
+
